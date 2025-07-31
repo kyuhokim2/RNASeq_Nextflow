@@ -1,8 +1,0 @@
-Basic RNASeq pipeline:
-
-Starting from bcl -> read counts
-
-Steps:
-1. raw intensity files to fastq with bcl2fastq 
-2. Alignment with Star
-3. Quantification with Salmon
