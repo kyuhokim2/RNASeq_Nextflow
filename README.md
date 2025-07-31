@@ -18,9 +18,6 @@ graph LR
     end
     
     D1 & D2 & D3 --> E[MultiQC]
-    
-    style Sample 2 opacity:0.7
-    style Sample N opacity:0.5
 ```
 
 ## References
