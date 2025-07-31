@@ -3,16 +3,24 @@
 ## Pipeline workflow:
 ```mermaid
 graph LR
-    A[FASTQ] --> B[QC]
-    A --> C[Align]
-    A --> D[Quantify]
-    B & C & D --> E[MultiQC]
-    
-    subgraph Parallel Steps
-        B
-        C
-        D
+    subgraph "Sample Processing (Parallel)"
+        subgraph "Sample 1"
+            A1[FASTQ] --> B1[QC] --> C1[Align] --> D1[Quantify]
+        end
+        
+        subgraph "Sample 2"
+            A2[FASTQ] --> B2[QC] --> C2[Align] --> D2[Quantify]
+        end
+        
+        subgraph "Sample N"
+            A3[FASTQ] --> B3[QC] --> C3[Align] --> D3[Quantify]
+        end
     end
+    
+    D1 & D2 & D3 --> E[MultiQC]
+    
+    style Sample 2 opacity:0.7
+    style Sample N opacity:0.5
 ```
 
 ## References
